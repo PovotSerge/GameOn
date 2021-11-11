@@ -622,6 +622,9 @@ footer {
     transform: translateY(70px);
     background-color: #fff;
   }
+  .btn-close {
+    margin-top: 200px;
+  }
 }
 
 @keyframes modalopen {
