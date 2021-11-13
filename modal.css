@@ -205,7 +205,7 @@ main {
 .fin-formulaire-title {
   width: 250px;
   margin: 0 auto;
-  padding-top: 250px;
+  padding-top: 200px;
   font-size: 28px;
   line-height: 45px;
 }
@@ -382,7 +382,8 @@ input[data-error]::after {
 .btn-close {
   display: none;
   padding: 12px 100px;
-  margin-top: 300px;
+  margin-top: 200px;
+  margin-bottom: 30px;
 }
 
 /* custom select styles */
@@ -623,7 +624,7 @@ footer {
     background-color: #fff;
   }
   .btn-close {
-    margin-top: 200px;
+    margin-top: 150px;
   }
 }
 
