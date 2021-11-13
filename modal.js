@@ -115,6 +115,8 @@ function conditionsGeneral() {
   return true
 }
 
+// teste les commentaires
+
 // btnSubmit.addEventListener('click', (e) => {
 //   e.preventDefault()
 //   const checkBoxRadio = document.querySelectorAll('input[type=radio]')
