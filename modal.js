@@ -34,7 +34,7 @@ btnSubmit.addEventListener('click', (e) => {
   e.preventDefault()
   let change = true
 
-  if (checkFirsName(), checkLastName(), checkCounter(), checkEmail(), checkRadio(), conditionsGeneral() == false) {
+  if (checkFirstName(), checkLastName(), checkCounter(), checkEmail(), checkRadio(), conditionsGeneral() == false) {
     change = false
   } else {
     modalBoby.innerHTML = '<div class="fin-formulaire-title">Thank you for submitting your registration details </div>'
@@ -47,7 +47,7 @@ btnClose.addEventListener('click', () => {
   modalbg.style.display = "none"
 })
 
-function checkFirsName() {
+function checkFirstName() {
   const firstName = document.querySelector('#first').value
   if (firstName.length < 2) {
     document.querySelector('#first').classList.add('error')
@@ -79,13 +79,17 @@ function checkCounter() {
 
 function checkEmail() {
   const inputEmail = document.querySelector('#email')
-  if (/^[\w-\.]+@([\w-]+\.)+[\w-]{2,}$/.test(inputEmail.value)) {
-    console.log('true');
-  } else {
+  if (/^[\w-\.]+@([\w-]+\.)+[\w-]{2,}$/.test(inputEmail.value) == false) {
+    //console.log('true');
     document.querySelector('#email').classList.add('error3')
     document.querySelector('.alert-input-email').classList.remove('invisible')
     return false
   }
+  // } else {
+  //   document.querySelector('#email').classList.add('error3')
+  //   document.querySelector('.alert-input-email').classList.remove('invisible')
+  //   return false
+  // }
   return true
 }
 
@@ -96,19 +100,22 @@ function checkRadio() {
   for (let i = 0; i < checkBoxRadio.length; i++) {
     if (checkBoxRadio[i].checked) {
       checkRadio = true
+    } else {
+      document.querySelector('.alert-input-radio').classList.remove('invisible')
+      return false
     }
   }
-  if (checkRadio == false) {
-    document.querySelector('.alert-input-radio').classList.remove('invisible')
-    return false
-  }
+  // if (checkRadio == false) {
+  //   document.querySelector('.alert-input-radio').classList.remove('invisible')
+  //   return false
+  // }
   return true
 }
 
 function conditionsGeneral() {
   const checkCondition = document.getElementById('checkbox1')
-  let conditions = false
-  if (checkCondition.checked == conditions) {
+  //let conditions = false
+  if (checkCondition.checked == false) {
     document.querySelector('.alert-conditions').classList.remove('invisible')
     return false
   }
