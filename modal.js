@@ -53,6 +53,9 @@ function checkFirstName() {
     document.querySelector('#first').classList.add('error')
     document.querySelector('.alert-input').classList.remove('invisible')
     return false
+  } else {
+    document.querySelector('#first').classList.remove('error')
+    document.querySelector('.alert-input').classList.add('invisible')
   }
   return true
 };
@@ -63,6 +66,9 @@ function checkLastName() {
     document.querySelector('#last').classList.add('error1')
     document.querySelector('.alert-input1').classList.remove('invisible')
     return false
+  } else {
+    document.querySelector('#last').classList.remove('error1')
+    document.querySelector('.alert-input1').classList.add('invisible')
   }
   return true
 }
@@ -73,6 +79,9 @@ function checkCounter() {
     document.querySelector('#quantity').classList.add('error2')
     document.querySelector('.alert-input2').classList.remove('invisible')
     return false
+  } else {
+    document.querySelector('#quantity').classList.remove('error2')
+    document.querySelector('.alert-input2').classList.add('invisible')
   }
   return true
 }
@@ -84,12 +93,10 @@ function checkEmail() {
     document.querySelector('#email').classList.add('error3')
     document.querySelector('.alert-input-email').classList.remove('invisible')
     return false
+  } else {
+    document.querySelector('#email').classList.remove('error3')
+    document.querySelector('.alert-input-email').classList.add('invisible')
   }
-  // } else {
-  //   document.querySelector('#email').classList.add('error3')
-  //   document.querySelector('.alert-input-email').classList.remove('invisible')
-  //   return false
-  // }
   return true
 }
 
@@ -100,50 +107,20 @@ function checkRadio() {
   for (let i = 0; i < checkBoxRadio.length; i++) {
     if (checkBoxRadio[i].checked) {
       checkRadio = true
+      document.querySelector('.alert-input-radio').classList.add('invisible')
     } else {
       document.querySelector('.alert-input-radio').classList.remove('invisible')
       return false
     }
   }
-  // if (checkRadio == false) {
-  //   document.querySelector('.alert-input-radio').classList.remove('invisible')
-  //   return false
-  // }
   return true
 }
 
 function conditionsGeneral() {
   const checkCondition = document.getElementById('checkbox1')
-  //let conditions = false
   if (checkCondition.checked == false) {
     document.querySelector('.alert-conditions').classList.remove('invisible')
     return false
   }
   return true
 }
-
-// teste les commentaires
-
-// btnSubmit.addEventListener('click', (e) => {
-//   e.preventDefault()
-//   const checkBoxRadio = document.querySelectorAll('input[type=radio]')
-//   let checkRadio = false
-
-//   for (let i = 0; i < checkBoxRadio.length; i++) {
-//     if (checkBoxRadio[i].checked) {
-//       checkRadio = true
-//     }
-//   }
-//   if (checkRadio == false) {
-//     document.querySelector('.alert-input-radio').classList.remove('invisible')
-//   }
-// })
-
-// btnSubmit.addEventListener('click', (e) => {
-//   e.preventDefault()
-//   const checkCondition = document.getElementById('checkbox1')
-//   let conditions = false
-//   if (checkCondition.checked == conditions) {
-//     document.querySelector('.alert-conditions').classList.remove('invisible')
-//   }
-// })
