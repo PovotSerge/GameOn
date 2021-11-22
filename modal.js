@@ -34,12 +34,30 @@ btnSubmit.addEventListener('click', (e) => {
   e.preventDefault()
   let change = true
 
-  if (checkFirstName(), checkLastName(), checkCounter(), checkEmail(), checkRadio(), conditionsGeneral() == false) {
+  if (checkFirstName() == false) {
     change = false
-  } else {
+  }
+  if (checkLastName() == false) {
+    change = false
+  }
+  if (checkCounter() == false) {
+    change = false
+  }
+  if (checkEmail() == false) {
+    change = false
+  }
+  if (checkRadio() == false) {
+    change = false
+  }
+  if (conditionsGeneral() == false) {
+    change = false
+  }
+
+  if (change == true) {
     modalBoby.innerHTML = '<div class="fin-formulaire-title">Thank you for submitting your registration details </div>'
     btnClose.style.display = 'block'
   }
+
 })
 
 
@@ -107,11 +125,14 @@ function checkRadio() {
   for (let i = 0; i < checkBoxRadio.length; i++) {
     if (checkBoxRadio[i].checked) {
       checkRadio = true
-      document.querySelector('.alert-input-radio').classList.add('invisible')
-    } else {
-      document.querySelector('.alert-input-radio').classList.remove('invisible')
-      return false
+
     }
+  }
+  if (checkRadio === true) {
+    document.querySelector('.alert-input-radio').classList.add('invisible')
+  } else {
+    document.querySelector('.alert-input-radio').classList.remove('invisible')
+    return false
   }
   return true
 }
@@ -121,6 +142,8 @@ function conditionsGeneral() {
   if (checkCondition.checked == false) {
     document.querySelector('.alert-conditions').classList.remove('invisible')
     return false
+  } else {
+    document.querySelector('.alert-conditions').classList.add('invisible')
   }
   return true
 }
